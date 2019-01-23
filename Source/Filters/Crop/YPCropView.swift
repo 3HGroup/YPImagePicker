@@ -59,10 +59,10 @@ class YPCropView: UIView {
         if ratio > imageRatio {
             let scaledDownRatio = UIScreen.main.bounds.width / image.size.width
             imageView.width(image.size.width * scaledDownRatio )
-            imageView.centerInContainer()
+//            imageView.centerInContainer()
         } else if ratio < imageRatio {
             imageView.Height == cropArea.Height
-            imageView.centerInContainer()
+//            imageView.centerInContainer()
         } else {
             imageView.followEdges(cropArea)
         }
