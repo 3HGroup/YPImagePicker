@@ -77,6 +77,8 @@ class YPAssetViewContainer: UIView {
         curtain.backgroundColor = UIColor.ypLabel.withAlphaComponent(0.7)
         curtain.alpha = 0
         
+        squareCropButton.alpha = YPConfig.library.enableCrop ? 1.0 : 0.0
+        
         if !onlySquare {
             // Crop Button
             squareCropButton.setImage(YPConfig.icons.cropIcon, for: .normal)
@@ -156,7 +158,7 @@ extension YPAssetViewContainer: YPAssetZoomableViewDelegate {
         }
         if isShown {
             UIView.animate(withDuration: 0.1) {
-                itemOverlay.alpha = 1
+                itemOverlay.alpha = YPConfig.library.enableCrop ? 1 : 0
             }
         }
     }
@@ -191,7 +193,7 @@ extension YPAssetViewContainer: UIGestureRecognizerDelegate {
         case .began:
             if isShown {
                 UIView.animate(withDuration: 0.1) {
-                    itemOverlay.alpha = 1
+                    itemOverlay.alpha = YPConfig.library.enableCrop ? 1 : 0
                 }
             }
         case .ended:
