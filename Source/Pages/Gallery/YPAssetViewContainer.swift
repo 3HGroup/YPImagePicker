@@ -84,6 +84,8 @@ class YPAssetViewContainer: UIView {
         multipleSelectionButton.setImage(YPConfig.icons.multipleSelectionOffIcon, for: .normal)
         multipleSelectionButton.Bottom == zoomableView!.Bottom - 15
         
+        // Pinch/Zoom enable
+        zoomableView?.isUserInteractionEnabled = YPConfig.library.enableCrop
     }
     
     // MARK: - Square button
