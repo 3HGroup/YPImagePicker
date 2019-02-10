@@ -23,7 +23,7 @@ class YPAssetViewContainer: UIView {
     public var isShown = true
     
     private let spinner = UIActivityIndicatorView(style: .white)
-    private var shouldCropToSquare = YPConfig.library.isSquareByDefault
+    private var shouldCropToSquare = false
     private var isMultipleSelection = false
 
     public var itemOverlayType = YPConfig.library.itemOverlayType
