@@ -110,6 +110,9 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
 
             strongSelf.updateCropInfo()
         }
+        
+        // Prevent showing multiple selection button initially until permission has been checked
+        v.assetViewContainer.multipleSelectionButton.isHidden = true
     }
     
     public override func viewDidAppear(_ animated: Bool) {
@@ -177,7 +180,6 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
 
         if multipleSelectionEnabled {
             if selection.isEmpty {
-                if mediaManager.fetchResult.count == 0 { return }
                 let asset = mediaManager.fetchResult[currentlySelectedIndex]
                 selection = [
                     YPLibrarySelection(index: currentlySelectedIndex,
