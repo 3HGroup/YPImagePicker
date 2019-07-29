@@ -46,8 +46,7 @@ open class YPPickerVC: YPBottomPager, YPBottomPagerDelegate {
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = YPConfig.colors.safeAreaBackgroundColor
+        view.backgroundColor = UIColor(r: 255, g: 255, b: 255)
         
         delegate = self
         
